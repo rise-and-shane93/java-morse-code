@@ -39,11 +39,9 @@ public class MorseCode {
             splitString = " ";
         }
 
-        String userInput = userInputNum == 1 ? scan.nextLine() : scan.nextLine().toUpperCase();
+        String userInput = userInputNum == 1 ? scan.nextLine().toUpperCase() : scan.nextLine();
 
         String[] userInputArr = userInput.split(splitString);
-
-        System.out.println(userInputArr.length);
 
         // for (int i = 0; i < userInputArr.length; i++) {
         //     System.out.println("Content: " + userInputArr[i] + "\t Length: " + userInputArr[i].length());
@@ -68,6 +66,8 @@ public class MorseCode {
         //     inputtedArrIndexes[i] = 
         // }
 
+        String joinString = "";
+
         String[] englishChars = {"A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", 
                                 "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", "1", "2",
                                 "3", "4", "5", "6", "7", "8", "9", "0"};
@@ -80,6 +80,7 @@ public class MorseCode {
         String[] arrTranslated = new String[arrInput.length];
 
         if (choiceNum == 1) {
+            joinString = " ";
             for (int j = 0; j < arrInput.length; j++) {
                 if (arrInput[j].equals(" ")) {
                     arrTranslated[j] = "|";
@@ -98,7 +99,7 @@ public class MorseCode {
 
         }
 
-        String response = String.join(" ", arrTranslated);
+        String response = String.join(joinString, arrTranslated);
 
         // for (int k = 0; k < arrTranslated.length; k++) {
         //     System.out.println(arrTranslated[k]);
